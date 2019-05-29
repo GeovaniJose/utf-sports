@@ -16,7 +16,7 @@
         <ion-item
           *ngIf="esporte"
           [routerLink]="['/menu/sport']"
-          [queryParams]="{ resource: esporte.id }"
+          [queryParams]="esporte"
         >
           <ion-icon slot="start" name="fitness"></ion-icon>
           <ion-label>Treinos</ion-label>
@@ -25,7 +25,7 @@
         <ion-item
           *ngIf="esporte"
           [routerLink]="['/menu/players']"
-          [queryParams]="{ sport: esporte }"
+          [queryParams]="esporte"
         >
           <ion-icon slot="start" name="contacts"></ion-icon>
           <ion-label>Jogadores</ion-label>
@@ -34,7 +34,7 @@
         <ion-item
           *ngIf="esporte"
           [routerLink]="['/menu/notificacion']"
-          [queryParams]="{ sport: esporte }"
+          [queryParams]="esporte"
         >
           <ion-icon slot="start" name="notifications"></ion-icon>
           <ion-label>Notificações</ion-label>

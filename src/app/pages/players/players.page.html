@@ -1,9 +1,37 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>players</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>{{sport.title}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding>
+  <ion-list>
+    <ion-list-header>
+      <ion-label>JOGADORES</ion-label>
+    </ion-list-header>
 
+    <ion-item *ngIf="players.length === 0 && !showLoading" lines="none">
+      <h1>Esporte ainda não possui jogadores cadastrados!</h1>
+    </ion-item>
+
+    <ion-item
+      *ngFor="let player of players"
+    >
+      <ion-avatar slot="start">
+        <img src="assets/img/avatar.png"/>
+      </ion-avatar>
+      <ion-label>
+        <h2>{{ player.nome }}</h2>
+        <p>Posição: {{ player.posicao }}</p>
+        <p>Presença: {{ player.presenca }}</p>
+      </ion-label>
+    </ion-item>
+
+    <ion-spinner *ngIf="showLoading">
+    </ion-spinner>
+  </ion-list>
 </ion-content>
+
