@@ -7,31 +7,46 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding>
   <ion-list>
     <ion-list-header>
       <ion-label>MEUS ESPORTES</ion-label>
     </ion-list-header>
-    <ion-item>
-      <ion-label>Vôlei</ion-label>
+
+    <ion-item *ngIf="mySports.length === 0 && !showLoading" lines="none">
+      <h1>Você ainda não se cadastrou em nenhum esporte!</h1>
     </ion-item>
+
+    <ion-item
+      *ngFor="let mysport of mySports"
+      (click)="enterSport(mysport.id)"
+    >
+      <ion-label>{{ mysport.title }}</ion-label>
+    </ion-item>
+
+    <ion-spinner *ngIf="showLoading">
+    </ion-spinner>
   </ion-list>
 
   <ion-list>
     <ion-list-header>
       <ion-label>ESPORTES DISPONÍVEIS</ion-label>
     </ion-list-header>
-    <ion-item>
-      <ion-label>Futebol</ion-label>
+
+    <ion-item *ngIf="sports.length === 0 && !showLoading" lines="none">
+      <h1>Não há esportes disponíveis!</h1>
     </ion-item>
-    <ion-item>
-      <ion-label>Futsal</ion-label>
+
+    <ion-item
+      *ngFor="let sport of sports"
+      (click)="subscribeSport(sport.id)"
+    >
+      <ion-label>{{ sport.title }}</ion-label>
     </ion-item>
-    <ion-item>
-      <ion-label>Cheerleaders</ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-label>Basquete</ion-label>
-    </ion-item>
+
+    <ion-spinner *ngIf="showLoading">
+    </ion-spinner>
   </ion-list>
 </ion-content>
+<!-- [routerLink]="['/menu/sport']"
+      [queryParams]="{ resource: sport.id }" -->

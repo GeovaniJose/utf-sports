@@ -52,6 +52,7 @@ export class UsuarioService {
                 nome: result.data().nome,
                 telefone: result.data().telefone,
                 atletica: result.data().atletica,
+                esportes: result.data().esportes,
                 isOnline: true
               };
 
