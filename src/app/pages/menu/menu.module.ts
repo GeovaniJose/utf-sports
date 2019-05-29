@@ -12,7 +12,10 @@ const routes: Routes = [
     children: [{
       path: 'home',
       loadChildren: '../home/home.module#HomePageModule'
-  }],
+    }, {
+      path: 'sport',
+      loadChildren: '../sport/sport.module#SportPageModule'
+    }],
   },
 ];
 

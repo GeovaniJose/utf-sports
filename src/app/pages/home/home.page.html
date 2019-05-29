@@ -19,7 +19,8 @@
 
     <ion-item
       *ngFor="let mysport of mySports"
-      (click)="enterSport(mysport.id)"
+      [routerLink]="['/menu/sport']"
+      [queryParams]="{ resource: mysport.id }"
     >
       <ion-label>{{ mysport.title }}</ion-label>
     </ion-item>
@@ -48,5 +49,3 @@
     </ion-spinner>
   </ion-list>
 </ion-content>
-<!-- [routerLink]="['/menu/sport']"
-      [queryParams]="{ resource: sport.id }" -->

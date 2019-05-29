@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Events } from '@ionic/angular';
 
 import { UsuarioService } from 'src/app/services/usuario.service';
 
@@ -9,9 +10,19 @@ import { UsuarioService } from 'src/app/services/usuario.service';
 })
 export class MenuPage implements OnInit {
 
-  constructor(private usuario: UsuarioService) { }
+  public esporte = false;
+
+  constructor(
+    public usuario: UsuarioService,
+    public events: Events
+  ) {
+    this.events.subscribe('share-sport', sport => {
+      this.esporte = sport;
+    });
+  }
 
   ngOnInit() {
+    this.esporte = false;
   }
 
 }
