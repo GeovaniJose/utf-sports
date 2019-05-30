@@ -18,7 +18,10 @@ const routes: Routes = [
     }, {
       path: 'players',
       loadChildren: '../players/players.module#PlayersPageModule'
-    }],
+    }, {
+      path: 'profile',
+      loadChildren: '../profile/profile.module#ProfilePageModule'
+  }],
   },
 ];
 
