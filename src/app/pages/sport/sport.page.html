@@ -7,6 +7,31 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding>
+  <ion-list>
+    <ion-list-header>
+      <ion-label>TREINOS</ion-label>
+    </ion-list-header>
 
+    <ion-item *ngIf="treinos.length === 0 && !showLoading" lines="none">
+      <h1>Não há treinos marcados!</h1>
+    </ion-item>
+
+    <ion-item *ngFor="let treino of treinos">
+      <ion-label>
+        <h2>
+          {{treino.data}}
+        </h2>
+        <h3>
+          {{treino.horaIni}} até {{treino.horaFim}}
+        </h3>
+        <p>
+          {{ treino.tipo }}
+        </p>
+      </ion-label>
+    </ion-item>
+
+    <ion-spinner *ngIf="showLoading">
+    </ion-spinner>
+  </ion-list>
 </ion-content>
