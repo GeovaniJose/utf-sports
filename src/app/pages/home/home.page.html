@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Home</ion-title>
+    <ion-title>UTF Sports</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -14,7 +14,7 @@
     </ion-list-header>
 
     <ion-item *ngIf="mySports.length === 0 && !showLoading" lines="none">
-      <h1>Você ainda não se cadastrou em nenhum esporte!</h1>
+      <h1 class="centraliza">Você ainda não se cadastrou em nenhum esporte!</h1>
     </ion-item>
 
     <ion-item
@@ -25,7 +25,7 @@
       <ion-label>{{ mysport.title }}</ion-label>
     </ion-item>
 
-    <ion-spinner *ngIf="showLoading">
+    <ion-spinner *ngIf="showLoading" class="centraliza">
     </ion-spinner>
   </ion-list>
 
@@ -35,7 +35,7 @@
     </ion-list-header>
 
     <ion-item *ngIf="sports.length === 0 && !showLoading" lines="none">
-      <h1>Não há esportes disponíveis!</h1>
+      <h1 class="centraliza">Não há esportes disponíveis!</h1>
     </ion-item>
 
     <ion-item
@@ -45,7 +45,7 @@
       <ion-label>{{ sport.title }}</ion-label>
     </ion-item>
 
-    <ion-spinner *ngIf="showLoading">
+    <ion-spinner *ngIf="showLoading" class="centraliza">
     </ion-spinner>
   </ion-list>
 </ion-content>

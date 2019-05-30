@@ -1,33 +1,35 @@
 <ion-content>
   <div class="ion-padding" *ngIf="!checkingUser">
-    <img src="" alt="Logo">
-
-    <div>
-    <ion-item>
-      <ion-label position="floating">Digite seu email</ion-label>
-      <ion-input type="text" [(ngModel)]="email"></ion-input>
-      <ion-icon slot="end" name="mail"></ion-icon>
-    </ion-item>
-
-    <ion-item>
-      <ion-label position="floating">Digite sua senha</ion-label>
-      <ion-input type="password" [(ngModel)]="senha"></ion-input>
-      <ion-icon slot="end" name="key"></ion-icon>
-    </ion-item>
+    <div class="justify-center">
+      <img src="assets/img/logo.png" alt="Logo">
     </div>
 
     <div>
-    <ion-button expand="block" (click)="login()">
-      <ion-spinner name="dots" *ngIf="showLoading"></ion-spinner>
-      <ion-label *ngIf="!showLoading">Login</ion-label>
-    </ion-button>
+      <ion-item>
+        <ion-label position="floating">Digite seu email</ion-label>
+        <ion-input type="text" [(ngModel)]="email"></ion-input>
+        <ion-icon slot="end" name="mail"></ion-icon>
+      </ion-item>
 
-    <ion-label [routerLink]="['/register']"><p>Não tem conta? Cadastre-se!</p></ion-label>
+      <ion-item>
+        <ion-label position="floating">Digite sua senha</ion-label>
+        <ion-input type="password" [(ngModel)]="senha"></ion-input>
+        <ion-icon slot="end" name="key"></ion-icon>
+      </ion-item>
+    </div>
+
+    <div class="text-center">
+      <ion-button expand="block" (click)="login()">
+        <ion-spinner name="dots" *ngIf="showLoading"></ion-spinner>
+        <ion-label *ngIf="!showLoading">Login</ion-label>
+      </ion-button>
+
+      <ion-label [routerLink]="['/register']"><p>Não tem conta? Cadastre-se!</p></ion-label>
     </div>
   </div>
 
-  <div *ngIf="checkingUser">
-    <img src="" alt="Logo">
+  <div class="loading" *ngIf="checkingUser">
+    <img src="assets/img/logo.png" alt="Logo">
     <ion-spinner name="dots"></ion-spinner>
   </div>
 </ion-content>

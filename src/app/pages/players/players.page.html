@@ -14,7 +14,7 @@
     </ion-list-header>
 
     <ion-item *ngIf="players.length === 0 && !showLoading" lines="none">
-      <h1>Esporte ainda não possui jogadores cadastrados!</h1>
+      <h1 class="centraliza">Esporte ainda não possui jogadores cadastrados!</h1>
     </ion-item>
 
     <ion-item
@@ -30,7 +30,7 @@
       </ion-label>
     </ion-item>
 
-    <ion-spinner *ngIf="showLoading">
+    <ion-spinner *ngIf="showLoading" class="centraliza">
     </ion-spinner>
   </ion-list>
 </ion-content>
