@@ -18,6 +18,7 @@ export class HomePage implements OnInit {
   public userAtletic = '';
   public userNome = '';
   public userTel = '';
+  public userPhotoURL = '';
   public userEsportes = '';
   public showLoading = true;
 
@@ -32,6 +33,7 @@ export class HomePage implements OnInit {
       this.userAtletic = user.atletica;
       this.userNome = user.nome;
       this.userTel = user.telefone;
+      this.userPhotoURL = user.photoURL;
       this.userEsportes = user.esportes;
       this.chargeSports();
     });
@@ -52,6 +54,9 @@ export class HomePage implements OnInit {
       ],
       buttons: [
         {
+          text: 'Cancelar'
+        },
+        {
           text: 'Okay',
           handler: async (input) => {
             if (input.posicao.length >= 3) {
@@ -59,6 +64,7 @@ export class HomePage implements OnInit {
                 nome: this.userNome,
                 telefone: this.userTel,
                 posicao: input.posicao,
+                photoURL: this.userPhotoURL,
                 presenca: 0
               };
 
@@ -83,9 +89,6 @@ export class HomePage implements OnInit {
               this.toast.presentToast('Insira uma posição com no mínimo 3 letras!');
             }
           }
-        },
-        {
-          text: 'Cancelar'
         }
       ]
     });

@@ -1,0 +1,11 @@
+.justify-center {
+  display: flex;
+  justify-content: center;
+  padding: 8px 0;
+
+  > img {
+    width: 40vmin;
+    height: 40vmin;
+    border-radius: 50%;
+  }
+}

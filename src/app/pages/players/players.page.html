@@ -21,7 +21,7 @@
       *ngFor="let player of players"
     >
       <ion-avatar slot="start">
-        <img src="assets/img/avatar.png"/>
+        <img [src]="player.photoURL"/>
       </ion-avatar>
       <ion-label>
         <h2>{{ player.nome }}</h2>

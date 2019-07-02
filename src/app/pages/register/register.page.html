@@ -1,51 +1,51 @@
 <ion-content>
-    <div class="ion-padding">
-      <div class="justify-center">
-        <img src="assets/img/logo.png" alt="Logo">
-      </div>
-    
-      <div>
-        <ion-item>
-          <ion-label position="floating">Digite seu nome</ion-label>
-          <ion-input type="text" [(ngModel)]="nome"></ion-input>
-          <ion-icon slot="end" name="person"></ion-icon>
-        </ion-item>
-    
-        <ion-item>
-          <ion-label position="floating">Digite seu email</ion-label>
-          <ion-input type="text" [(ngModel)]="email"></ion-input>
-          <ion-icon slot="end" name="mail"></ion-icon>
-        </ion-item>
-    
-        <ion-item>
-          <ion-label position="floating">Digite seu telefone</ion-label>
-          <ion-input type="text" pattern="[0-9]{11}" inputmode="tel" [(ngModel)]="telefone"></ion-input>
-          <ion-icon slot="end" name="call"></ion-icon>
-        </ion-item>
-    
-        <ion-item>
-          <ion-label>Atlética</ion-label>
-          <ion-select [(ngModel)]="atletica" placeholder="Selecione">
-            <ion-select-option value="javas">Javas</ion-select-option>
-            <ion-select-option value="carniceiros">Carniceiros</ion-select-option>
-          </ion-select>
-          <ion-icon slot="end" name="medal"></ion-icon>
-        </ion-item>
-    
-        <ion-item>
-          <ion-label position="floating">Digite sua senha</ion-label>
-          <ion-input type="password" [(ngModel)]="senha"></ion-input>
-          <ion-icon slot="end" name="key"></ion-icon>
-        </ion-item>
-      </div>
-    
-      <div class="text-center">
-        <ion-button expand="block" (click)="registrar()">
-          <ion-spinner name="dots" *ngIf="showLoading"></ion-spinner>
-          <ion-label *ngIf="!showLoading">Cadastrar</ion-label>
-        </ion-button>
-    
-        <ion-label [routerLink]="['/login']"><p>Já possui conta? Login!</p></ion-label>
-      </div>
+  <div class="ion-padding">
+    <div class="justify-center">
+      <img [src]="foto || fotoPadrao" alt="Adicionar imagem" (click)="pickFoto()">
     </div>
-  </ion-content>
+  
+    <div>
+      <ion-item>
+        <ion-label position="floating">Digite seu nome</ion-label>
+        <ion-input type="text" minlength="3" [(ngModel)]="nome"></ion-input>
+        <ion-icon slot="end" name="person"></ion-icon>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label position="floating">Digite seu email</ion-label>
+        <ion-input type="text" minlength="7" [(ngModel)]="email"></ion-input>
+        <ion-icon slot="end" name="mail"></ion-icon>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label position="floating">Digite seu telefone</ion-label>
+        <ion-input type="text" pattern="[0-9]{11}" inputmode="tel" [(ngModel)]="telefone"></ion-input>
+        <ion-icon slot="end" name="call"></ion-icon>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label>Atlética</ion-label>
+        <ion-select [(ngModel)]="atletica" placeholder="Selecione">
+          <ion-select-option value="javas">Javas</ion-select-option>
+          <ion-select-option value="carniceiros">Carniceiros</ion-select-option>
+        </ion-select>
+        <ion-icon slot="end" name="medal"></ion-icon>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label position="floating">Digite sua senha</ion-label>
+        <ion-input type="password" minlength="6" [(ngModel)]="senha"></ion-input>
+        <ion-icon slot="end" name="key"></ion-icon>
+      </ion-item>
+    </div>
+  
+    <div class="text-center">
+      <ion-button expand="block" (click)="registrar()">
+        <ion-spinner name="dots" *ngIf="showLoading"></ion-spinner>
+        <ion-label *ngIf="!showLoading">Cadastrar</ion-label>
+      </ion-button>
+  
+      <ion-label [routerLink]="['/login']"><p>Já possui conta? Login!</p></ion-label>
+    </div>
+  </div>
+</ion-content>

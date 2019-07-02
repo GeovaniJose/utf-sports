@@ -1,5 +1,7 @@
 {
   "name": "utf-sports",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

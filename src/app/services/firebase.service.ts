@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import * as firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
+import 'firebase/storage';
 
 @Injectable({
   providedIn: 'root'
@@ -27,6 +28,10 @@ export class FirebaseService {
 
   auth() {
     return firebase.auth();
+  }
+
+  storage() {
+    return firebase.storage();
   }
 
 }

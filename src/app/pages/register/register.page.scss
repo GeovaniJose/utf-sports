@@ -8,6 +8,12 @@
 .justify-center {
   display: flex;
   justify-content: center;
+
+  > img {
+    width: 40vmin;
+    height: 40vmin;
+    border-radius: 50%;
+  }
 }
 
 .text-center {

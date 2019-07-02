@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavController } from '@ionic/angular';
 
 import { UsuarioService } from './../../services/usuario.service';
 
@@ -15,10 +15,10 @@ export class LoginPage implements OnInit {
   public checkingUser = true;
   public showLoading = false;
 
-  constructor(public usuario: UsuarioService, public router: Router) {
+  constructor(public usuario: UsuarioService, public navCtrl: NavController) {
     this.usuario.getUser().subscribe(user => {
       (user.isOnline)
-        ? this.router.navigateByUrl('/menu/home')
+        ? this.navCtrl.navigateRoot('/menu/home')
         : this.checkingUser = false;
     });
   }
@@ -31,7 +31,7 @@ export class LoginPage implements OnInit {
       this.showLoading = true;
       await this.usuario.login(this.email, this.senha);
       this.showLoading = false;
-      this.router.navigateByUrl('/menu/home');
+      this.navCtrl.navigateRoot('/menu/home');
     } catch (erro) {
       this.showLoading = false;
     }
