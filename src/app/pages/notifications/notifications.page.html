@@ -1,9 +1,30 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>notifications</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>{{sport.title}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding>
+  <ion-list>
+    <ion-list-header>
+      <ion-label>NOTIFICAÇÕES</ion-label>
+    </ion-list-header>
 
+    <ion-item *ngIf="notifications.length === 0 && !showLoading" lines="none">
+      <h1 class="centraliza">Não há notificações no momento!</h1>
+    </ion-item>
+
+    <ion-item *ngFor="let notific of notifications" lines="none">
+      <div lines="none" class="direction-column">
+        <ion-label><h1>{{notific.assunto}}</h1></ion-label>
+        <ion-textarea readonly>{{notific.mensagem}}</ion-textarea>
+      </div>
+    </ion-item>
+
+    <ion-spinner *ngIf="showLoading" class="centraliza">
+    </ion-spinner>
+  </ion-list>
 </ion-content>

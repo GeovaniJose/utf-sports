@@ -34,6 +34,7 @@ export class PlayersPage implements OnInit {
     await this.firebase.db().collection('sports')
       .doc(this.sport.id)
       .collection('players')
+      .orderBy('nome')
       .onSnapshot(results => {
         this.players = [];
 

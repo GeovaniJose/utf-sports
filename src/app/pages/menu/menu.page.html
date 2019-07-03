@@ -34,6 +34,8 @@
 
           <ion-item
             *ngIf="esporte"
+            [routerLink]="['/menu/notifications']"
+            [queryParams]="esporte"
           >
             <ion-icon slot="start" name="notifications"></ion-icon>
             <ion-label>Notificações</ion-label>
@@ -58,6 +60,3 @@
   </ion-content>
 </ion-menu>
 <ion-router-outlet main id="menuContent"></ion-router-outlet>
-
-<!-- [routerLink]="['/menu/notificacion']"
-            [queryParams]="esporte" -->

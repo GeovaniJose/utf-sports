@@ -24,7 +24,10 @@ const routes: Routes = [
     }, {
       path: 'profile',
       loadChildren: '../profile/profile.module#ProfilePageModule'
-  }],
+    }, {
+      path: 'notifications',
+      loadChildren: '../notifications/notifications.module#NotificationsPageModule'
+    }],
   },
 ];
 
