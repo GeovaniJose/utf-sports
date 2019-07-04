@@ -8,23 +8,23 @@
       <ion-item>
         <ion-label position="floating">Digite seu email</ion-label>
         <ion-input type="text" [(ngModel)]="email"></ion-input>
-        <ion-icon slot="end" name="mail"></ion-icon>
+        <ion-icon slot="end" name="mail" color="secondary"></ion-icon>
       </ion-item>
 
       <ion-item>
         <ion-label position="floating">Digite sua senha</ion-label>
         <ion-input type="password" [(ngModel)]="senha"></ion-input>
-        <ion-icon slot="end" name="key"></ion-icon>
+        <ion-icon slot="end" name="key" color="secondary"></ion-icon>
       </ion-item>
     </div>
 
     <div class="text-center">
-      <ion-button expand="block" (click)="login()">
+      <ion-button expand="block" (click)="login()" shape="round">
         <ion-spinner name="dots" *ngIf="showLoading"></ion-spinner>
         <ion-label *ngIf="!showLoading">Login</ion-label>
       </ion-button>
 
-      <ion-label [routerLink]="['/register']"><p>Não tem conta? Cadastre-se!</p></ion-label>
+      <ion-label [routerLink]="['/register']" color="secondary"><p>Não tem conta? Cadastre-se!</p></ion-label>
     </div>
   </div>
 

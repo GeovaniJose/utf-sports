@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
@@ -10,7 +10,7 @@
 <ion-content padding>
   <ion-list>
     <ion-list-header>
-      <ion-label>MEUS ESPORTES</ion-label>
+      <ion-label color="primary">MEUS ESPORTES</ion-label>
     </ion-list-header>
 
     <ion-item *ngIf="mySports.length === 0 && !showLoading" lines="none">
@@ -22,7 +22,7 @@
       [routerLink]="['/menu/sport']"
       [queryParams]="mysport"
     >
-      <ion-label>{{ mysport.title }}</ion-label>
+      <ion-label color="secondary">{{ mysport.title }}</ion-label>
     </ion-item>
 
     <ion-spinner *ngIf="showLoading" class="centraliza">
@@ -31,7 +31,7 @@
 
   <ion-list>
     <ion-list-header>
-      <ion-label>ESPORTES DISPONÍVEIS</ion-label>
+      <ion-label color="primary">ESPORTES DISPONÍVEIS</ion-label>
     </ion-list-header>
 
     <ion-item *ngIf="sports.length === 0 && !showLoading" lines="none">

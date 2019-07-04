@@ -8,19 +8,19 @@
       <ion-item>
         <ion-label position="floating">Digite seu nome</ion-label>
         <ion-input type="text" minlength="3" [(ngModel)]="nome"></ion-input>
-        <ion-icon slot="end" name="person"></ion-icon>
+        <ion-icon slot="end" name="person" color="secondary"></ion-icon>
       </ion-item>
   
       <ion-item>
         <ion-label position="floating">Digite seu email</ion-label>
         <ion-input type="text" minlength="7" [(ngModel)]="email"></ion-input>
-        <ion-icon slot="end" name="mail"></ion-icon>
+        <ion-icon slot="end" name="mail" color="secondary"></ion-icon>
       </ion-item>
   
       <ion-item>
         <ion-label position="floating">Digite seu telefone</ion-label>
         <ion-input type="text" pattern="[0-9]{11}" inputmode="tel" [(ngModel)]="telefone"></ion-input>
-        <ion-icon slot="end" name="call"></ion-icon>
+        <ion-icon slot="end" name="call" color="secondary"></ion-icon>
       </ion-item>
   
       <ion-item>
@@ -45,7 +45,7 @@
         <ion-label *ngIf="!showLoading">Cadastrar</ion-label>
       </ion-button>
   
-      <ion-label [routerLink]="['/login']"><p>Já possui conta? Login!</p></ion-label>
+      <ion-label [routerLink]="['/login']" color="secondary"><p>Já possui conta? Login!</p></ion-label>
     </div>
   </div>
 </ion-content>

@@ -1,6 +1,6 @@
 <ion-menu side="start" menuId="menu" type="overlay" contentId="menuContent">
   <ion-header>
-    <ion-toolbar>
+    <ion-toolbar color="primary">
       <ion-title>Menu</ion-title>
     </ion-toolbar>
   </ion-header>
@@ -10,7 +10,7 @@
       <ion-list>
         <ion-menu-toggle auto-hide="true">
           <ion-item [routerLink]="['/menu/home']">
-            <ion-icon slot="start" name="home"></ion-icon>
+            <ion-icon color="secondary" slot="start" name="home"></ion-icon>
             <ion-label>Home</ion-label>
           </ion-item>
 
@@ -19,7 +19,7 @@
             [routerLink]="['/menu/sport']"
             [queryParams]="esporte"
           >
-            <ion-icon slot="start" name="fitness"></ion-icon>
+            <ion-icon color="secondary" slot="start" name="fitness"></ion-icon>
             <ion-label>Treinos</ion-label>
           </ion-item>
 
@@ -28,7 +28,7 @@
             [routerLink]="['/menu/players']"
             [queryParams]="esporte"
           >
-            <ion-icon slot="start" name="contacts"></ion-icon>
+            <ion-icon color="secondary" slot="start" name="contacts"></ion-icon>
             <ion-label>Jogadores</ion-label>
           </ion-item>
 
@@ -37,7 +37,7 @@
             [routerLink]="['/menu/notifications']"
             [queryParams]="esporte"
           >
-            <ion-icon slot="start" name="notifications"></ion-icon>
+            <ion-icon color="secondary" slot="start" name="notifications"></ion-icon>
             <ion-label>Notificações</ion-label>
           </ion-item>
         </ion-menu-toggle>
@@ -46,12 +46,12 @@
       <ion-list>
         <ion-menu-toggle auto-hide="true">
           <ion-item [routerLink]="['/menu/profile']">
-            <ion-icon slot="start" name="contact"></ion-icon>
+            <ion-icon color="secondary" slot="start" name="contact"></ion-icon>
             <ion-label>Perfil</ion-label>
           </ion-item>
 
           <ion-item (click)="this.usuario.logout()">
-            <ion-icon slot="start" name="exit"></ion-icon>
+            <ion-icon color="secondary" slot="start" name="exit"></ion-icon>
             <ion-label>Logout</ion-label>
           </ion-item>
         </ion-menu-toggle>

@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
@@ -10,7 +10,7 @@
 <ion-content padding>
   <ion-list>
     <ion-list-header>
-      <ion-label>NOTIFICAÇÕES</ion-label>
+      <ion-label color="primary">NOTIFICAÇÕES</ion-label>
     </ion-list-header>
 
     <ion-item *ngIf="notifications.length === 0 && !showLoading" lines="none">
@@ -19,7 +19,7 @@
 
     <ion-item *ngFor="let notific of notifications" lines="none">
       <div lines="none" class="direction-column">
-        <ion-label><h1>{{notific.assunto}}</h1></ion-label>
+        <ion-label color="secondary"><h1>{{notific.assunto}}</h1></ion-label>
         <ion-textarea readonly>{{notific.mensagem}}</ion-textarea>
       </div>
     </ion-item>

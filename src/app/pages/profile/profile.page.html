@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
@@ -13,25 +13,25 @@
   </div>
 
   <ion-item>
-    <ion-icon slot="start" name="person"></ion-icon>
+    <ion-icon color="secondary" slot="start" name="person"></ion-icon>
     <ion-label>
       <p>Nome</p>
       <h2>{{ user.nome }}</h2>
     </ion-label>
-    <ion-icon slot="end" name="create" (click)="updateName()"></ion-icon>
+    <ion-icon color="tertiary" slot="end" name="create" (click)="updateName()"></ion-icon>
   </ion-item>
 
   <ion-item>
-    <ion-icon slot="start" name="call"></ion-icon>
+    <ion-icon color="secondary" slot="start" name="call"></ion-icon>
     <ion-label>
       <p>Telefone</p>
       <h2>{{ user.telefone }}</h2>
     </ion-label>
-    <ion-icon slot="end" name="create" (click)="updatePhone()"></ion-icon>
+    <ion-icon color="tertiary" slot="end" name="create" (click)="updatePhone()"></ion-icon>
   </ion-item>
 
   <ion-item>
-    <ion-icon slot="start" name="mail"></ion-icon>
+    <ion-icon color="secondary" slot="start" name="mail"></ion-icon>
     <ion-label>
       <p>Email</p>
       <h2>{{ user.email }}</h2>
@@ -39,7 +39,7 @@
   </ion-item>
 
   <ion-item>
-    <ion-icon slot="start" name="medal"></ion-icon>
+    <ion-icon color="secondary" slot="start" name="medal"></ion-icon>
     <ion-label>
       <p>Atlética</p>
       <h2>{{ user.atletica }}</h2>
